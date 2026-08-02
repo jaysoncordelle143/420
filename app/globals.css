@@ -1,0 +1,57 @@
+/* DARK MODE (DEFAULT) */
+:root {
+  --bg-color: #000000;
+  --text-color: #4ade80;
+  --card-bg: #111827;
+  --card-border: #14532d;
+  --nav-bg: rgba(0, 0, 0, 0.95);
+  --heading-color: #ffffff;
+  --muted-text: #9ca3af;
+}
+
+/* LIGHT MODE */
+.light-mode {
+  --bg-color: #f3f4f6;
+  --text-color: #166534;
+  --card-bg: #ffffff;
+  --card-border: #bbf7d0;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --heading-color: #111827;
+  --muted-text: #4b5563;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Key Classes using Variables */
+.navbar { background-color: var(--nav-bg); border-bottom: 1px solid var(--card-border); position: sticky; top: 0; z-index: 50; }
+.card, .review-card, .contact-card { background-color: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-color); }
+.card h3, .review-author { color: var(--heading-color); }
+.section-subtitle, p { color: var(--muted-text); }
+.footer { background-color: var(--bg-color); border-top: 1px solid var(--card-border); padding: 2rem; text-align: center; }
+
+/* Layout & Animations */
+.nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem; flex-wrap: wrap; }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-links a { color: var(--text-color); text-decoration: none; font-weight: 500; }
+.hero { text-align: center; padding: 5rem 1rem; border-bottom: 1px solid var(--card-border); }
+.hero h1 { color: var(--text-color); font-size: 3rem; margin-bottom: 1rem; }
+.btn-primary { display: inline-block; background-color: #16a34a; color: white; padding: 0.75rem 2rem; border-radius: 9999px; text-decoration: none; margin: 0.5rem; border: none; cursor: pointer; }
+.features { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+.feature-badge { background-color: var(--card-bg); padding: 0.5rem 1rem; border-radius: 0.5rem; border: 1px solid var(--card-border); }
+.section { padding: 5rem 1rem; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+.section-title { font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-color); text-align: center; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+
+/* Floating Leaves Animation */
+.floating-leaves { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+.leaf { position: absolute; width: 30px; height: 30px; background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); border-radius: 0 50% 0 50%; opacity: 0.6; animation: floatLeaf 15s infinite ease-in-out; }
+@keyframes floatLeaf { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 0.6; } 90% { opacity: 0.6; } 100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; } }
