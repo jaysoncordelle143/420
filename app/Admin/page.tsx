@@ -6,8 +6,8 @@ import AdminOrderManager from '@/components/AdminOrderManager';
 import ChangePassword from '@/components/ChangePassword';
 
 export default async function AdminDashboard() {
-  const supabase = createClient();
-  
+  const supabase = await createClient();
+
   // Check if user is logged in
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) {
@@ -28,14 +28,14 @@ export default async function AdminDashboard() {
             <form action={signOut}>
               <button
                 type="submit"
-                className="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg text-sm font-medium"
+                className="px-4 py-2 bg-red-700 rounded-lg text-sm font-medium"
               >
                 Logout
               </button>
             </form>
           </div>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <AdminProductManager products={products || []} />
           <AdminOrderManager orders={orders || []} />
