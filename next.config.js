@@ -1,9 +1,3 @@
-const nextConfig = {
-  typescript: {
-    experimental: {
-      useTypeScriptCli: true,
-    },
-  },
-};
+const nextConfig = {};
 
 module.exports = nextConfig;
