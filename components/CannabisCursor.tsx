@@ -30,7 +30,7 @@ export default function CannabisCursor() {
 
     // Mouse state with spring physics
     const mouse = { x: width / 2, y: height / 2, tx: width / 2, ty: height / 2 };
-    const trail = [];
+    const trail: any[] = [];
     const numDots = 18;
 
     // Initialize trail
